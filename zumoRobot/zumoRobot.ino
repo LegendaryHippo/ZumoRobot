@@ -17,7 +17,7 @@ const int M_RIGHT_PWM = 9;
 const int M_LEFT_PWM = 10;
 const int LED_PIN = 13;
 
-
+int mSpeed = 50;
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_PIN, OUTPUT);
@@ -32,8 +32,32 @@ void loop() {
   int position = refSensors.readLine(sensors);
   Serial.println(position);
 
+  followLine();
+
 }
 
+//sensor 0= linje til venstre 2000=på linje 5000=linje til høyre
+void followLine() {
+  unsigned int sensors[6];
+  int position = refSensors.readLine(sensors);
+  Serial.println(position);
+
+  if (2000 == position) {
+    motors.setSpeeds(100, 100);
+  }
+
+  else if (2000 >= position) {
+    motors.setSpeeds(-100, 100);
+  }
+
+  else if (2000 <= position) {
+    motors.setSpeeds(100, -100);
+  }
+
+  delay(200);
+}
+
+//kalibrerer ref sensor i starten av programmet
 void calibrateRefSensor() {
   for (int i = 0; i < 80; i++)
   {
