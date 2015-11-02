@@ -8,6 +8,8 @@ bool test = false;
 
 const int MAX_SPEED = 400;
 
+unsigned int sensor_values[6];
+
 ZumoMotors motors;
 ZumoReflectanceSensorArray refSensors;
 
@@ -28,13 +30,18 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  unsigned int sensors[6];
-  int position = refSensors.readLine(sensors);
-  Serial.println(position);
+  
+  int position = refSensors.readLine(sensor_values);
+  //Serial.println(position);
+  //followLine();
 
-  followLine();
+  refSensors.read(sensor_values);
+  Serial.print(sensor_values[0]);
+  Serial.print(" | ");
+  Serial.println(sensor_values[5]);
 
 }
+
 
 //sensor 0= linje til venstre 2000=på linje 5000=linje til høyre
 void followLine() {
@@ -43,18 +50,18 @@ void followLine() {
   Serial.println(position);
 
   if (2000 == position) {
-    motors.setSpeeds(100, 100);
+    motors.setSpeeds(200, 200);
   }
 
   else if (2000 >= position) {
-    motors.setSpeeds(-100, 100);
+    motors.setSpeeds(-200, 200);
   }
 
   else if (2000 <= position) {
-    motors.setSpeeds(100, -100);
+    motors.setSpeeds(200, -200);
   }
 
-  delay(200);
+  delay(10);
 }
 
 //kalibrerer ref sensor i starten av programmet
