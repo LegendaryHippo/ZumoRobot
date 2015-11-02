@@ -4,45 +4,26 @@
 #include <QTRSensors.h>
 #include <ZumoReflectanceSensorArray.h>
 
-<<<<<<< HEAD
-const int LED_PIN = 13;
-
 bool test = false;
 
 const int MAX_SPEED = 400;
 
 ZumoMotors motors;
 ZumoReflectanceSensorArray refSensors;
-=======
-// HYMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 const int M_RIGHT_CONTROL = 7;
 const int M_LEFT_CONTROL = 8;
 const int M_RIGHT_PWM = 9;
 const int M_LEFT_PWM = 10;
-<<<<<<< HEAD
-//pin
 const int LED_PIN = 13;
 
-=======
->>>>>>> a5acef8c32ea5c267006f465b418d16f75ee4eff
->>>>>>> refs/remotes/origin/master
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_PIN, OUTPUT);
-<<<<<<< HEAD
-  //motors.setSpeeds(-400, 400);
   refSensors.init();
   Serial.begin(9600);
   calibrateRefSensor();
-
-
-  
-
-
-=======
->>>>>>> refs/remotes/origin/master
 }
 
 void loop() {
