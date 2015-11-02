@@ -14,10 +14,12 @@ const int LED_PIN = 13;
 const int MAX_SPEED = 400;
 
 ZumoMotors motors;
+ZumoReflectanceSensorArray refSensors;
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_PIN, OUTPUT);
+  refSensors.init();
   
   
 }
@@ -25,5 +27,5 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(LED_PIN, HIGH);
-  motors.setSpeeds(200, -200);
+  motors.setSpeeds(400, -400);
 }
