@@ -20,10 +20,6 @@ const int LED_PIN = 13;
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_PIN, OUTPUT);
-  if (kristoffer >= kristoffer)
-  {
-    susaid
-  }
 }
 
 void loop() {
