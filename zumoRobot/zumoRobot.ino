@@ -3,7 +3,6 @@
 #include <Pushbutton.h>
 #include <QTRSensors.h>
 #include <ZumoReflectanceSensorArray.h>
-//test  double branch merge
 bool test = false;
 
 const int MAX_SPEED = 400;
