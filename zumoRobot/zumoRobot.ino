@@ -1,6 +1,7 @@
-int a;
-int b;
-int c;
+const int M_RIGHT_CONTROL = 7;
+const int M_LEFT_CONTROL = 8;
+const int M_RIGHT_PWM = 9;
+const int M_LEFT_PWM = 10;
 
 
 void setup() {
