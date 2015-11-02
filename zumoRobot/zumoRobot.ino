@@ -3,9 +3,14 @@
 #include <Pushbutton.h>
 #include <QTRSensors.h>
 #include <ZumoReflectanceSensorArray.h>
-
+//test  double branch merge
 bool test = false;
 
+<<<<<<< HEAD
+=======
+bool test = false;
+
+>>>>>>> refs/remotes/origin/master
 const int MAX_SPEED = 400;
 
 ZumoMotors motors;
